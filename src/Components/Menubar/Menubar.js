@@ -1,7 +1,8 @@
 import React from 'react';
 import './Menubar.css';
 
-const Menubar = () => {
+const Menubar = (props) => {
+    // const {count} = props.count;
     return (
         <div>
             <div className='menu-container d-flex'>
@@ -9,8 +10,8 @@ const Menubar = () => {
                 <div className='col-md-10 d-flex justify-content-end '>
                         <li className='items me-4'>Home</li>
                         <li className='items me-4'>Contact</li>
-                        <li className='items me-4'>blog</li>
-                        <li className='items me-4'>about</li>
+                        <li className='items me-4'>Cart <sup>{props.count}</sup></li>
+                        <li className='items me-4'>Login</li>
                     
                 </div>
                 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Singleproduct from '../Singleproduct/Singleproduct';
 
-const Allproducts = () => {
+const Allproducts = (props) => {
+    const {cartCount} = props;
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -11,12 +12,17 @@ const Allproducts = () => {
     return (
         <div>
            <h2>All Products</h2>
-           {
-            products.map(product => <Singleproduct
+           <div>
+            <div className="row">
+                {
+                 products.map(product => <Singleproduct
+                cartCount = {cartCount}
                 key = {product.id}
                  product={product}
                  ></Singleproduct>)
-           } 
+               } 
+            </div>
+           </div>
            
         </div>
     );
